@@ -21,6 +21,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
   Widget currentScreen;
   Position _currentPosition;
   @override
@@ -57,6 +58,9 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: Colors.black, // status bar color
+    ));
     return SafeArea(
       child: Scaffold(
         body: PageStorage(

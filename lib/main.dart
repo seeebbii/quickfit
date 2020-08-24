@@ -11,8 +11,7 @@ void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   prefs = await SharedPreferences.getInstance();
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-    systemNavigationBarColor: Colors.black, // navigation bar color
-    statusBarColor: Colors.white, // status bar color
+    statusBarColor: Colors.transparent, // status bar color
   ));
   runApp(
     MaterialApp(
@@ -45,7 +44,6 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-//    FlutterStatusbarcolor.setStatusBarColor(Colors.white);
     return SplashScreen(loggedIn: loggedIn,);
   }
 }

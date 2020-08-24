@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter/services.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:quickfit/bottom_nav_screens/ChatScreen.dart';
 import 'package:quickfit/bottom_nav_screens/HomeScreen.dart';
@@ -56,9 +58,12 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: PageStorage(
-          child: currentScreen,
-          bucket: bucket,
+        body: AnnotatedRegion<SystemUiOverlayStyle>(
+          value: SystemUiOverlayStyle.light,
+          child: PageStorage(
+            child: currentScreen,
+            bucket: bucket,
+          ),
         ),
         floatingActionButton: FloatingActionButton(
           backgroundColor: Colors.red,

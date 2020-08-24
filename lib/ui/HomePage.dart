@@ -59,7 +59,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: Colors.black, // status bar color
+      statusBarColor: Colors.white, // status bar color
     ));
     return SafeArea(
       child: Scaffold(

@@ -152,7 +152,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         'Update',
                         style: TextStyle(color: Colors.white, fontSize: 18),
                       ),
-                      onPressed: updateMyProfile,
+                      onPressed: (){
+                        updateMyProfile();
+                      },
                       color: Colors.red,
                     ),
                   )
@@ -168,19 +170,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Future getImage() async {
     var tempImage = await ImagePicker.pickImage(source: ImageSource.gallery);
     setState(() {
-      imageSelected = tempImage;
+      if(tempImage!=null){
+        imageSelected = tempImage;
+      }
     });
   }
 
   updateMyProfile() async {
-    var oldImage =
-        await http.get('http://sania.co.uk/quick_fix/${widget.user.image_url}');
-    if (imageSelected == null) {
-      imageSelected.writeAsBytesSync(oldImage.bodyBytes);
+    String URL = 'http://sania.co.uk/quick_fix/updateProfile.php';
+    if(imageSelected != null){
+      base64Image = base64Encode(imageSelected.readAsBytesSync());
+    }else{
+      base64Image = 'null';
     }
-
-    String URL = 'http://sania.co.uk/quick_fix/sendPushNotification.php';
-    base64Image = base64Encode(imageSelected.readAsBytesSync());
     final jsonObj = {
       'image': base64Image,
       'name': _nameController.text.toString(),

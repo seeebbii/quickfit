@@ -12,6 +12,7 @@
     <string>Location Always Usage Description</string>
     <key>NSPhotoLibraryUsageDescription</key>
     <string>NS Photo Library Usage Description</string>
+    <string>Google Maps.</string>
     <key>io.flutter.embedded_views_preview</key>
     <true/>
     <key>io.flutter.embedded_views_preview</key>

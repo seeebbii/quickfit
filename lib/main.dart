@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_statusbarcolor/flutter_statusbarcolor.dart';
 import 'package:quickfit/ui/SplashScreen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -8,6 +10,10 @@ SharedPreferences prefs;
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   prefs = await SharedPreferences.getInstance();
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    systemNavigationBarColor: Colors.black, // navigation bar color
+    statusBarColor: Colors.white, // status bar color
+  ));
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -39,6 +45,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
+//    FlutterStatusbarcolor.setStatusBarColor(Colors.white);
     return SplashScreen(loggedIn: loggedIn,);
   }
 }

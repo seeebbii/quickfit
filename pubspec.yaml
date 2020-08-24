@@ -38,6 +38,7 @@ dependencies:
   google_maps_flutter:
   url_launcher: ^5.5.0
   image_picker:
+  flutter_statusbarcolor: ^0.2.3
 
 dev_dependencies:
   flutter_test:

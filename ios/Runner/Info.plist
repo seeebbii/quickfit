@@ -14,6 +14,8 @@
     <string>NS Photo Library Usage Description</string>
     <key>io.flutter.embedded_views_preview</key>
     <true/>
+    <key>io.flutter.embedded_views_preview</key>
+    <true/>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>

@@ -111,7 +111,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                         SizedBox(
-                          width: 30,
+                          width: 15,
                         ),
                         MaterialButton(
                           minWidth: 40,
@@ -137,7 +137,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                         SizedBox(
-                          width: 40,
+                          width: 20,
                         ),
                       ],
                     ),
@@ -170,7 +170,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                         SizedBox(
-                          width: 25,
+                          width: 15,
                         ),
                         MaterialButton(
                           minWidth: 40,

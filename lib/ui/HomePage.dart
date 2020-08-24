@@ -58,12 +58,9 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: AnnotatedRegion<SystemUiOverlayStyle>(
-          value: SystemUiOverlayStyle.light,
-          child: PageStorage(
-            child: currentScreen,
-            bucket: bucket,
-          ),
+        body: PageStorage(
+          child: currentScreen,
+          bucket: bucket,
         ),
         floatingActionButton: FloatingActionButton(
           backgroundColor: Colors.red,

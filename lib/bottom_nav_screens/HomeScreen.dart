@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:quickfit/bottom_nav_screens/ServicesScreen.dart';
 import 'package:quickfit/model/BrandModel.dart';
@@ -38,142 +39,145 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Stack(
-          children: [
-            Center(
-              child: Image.asset(
-                'assets/images/homeBG.png',
-                fit: BoxFit.cover,
-                height: double.infinity,
-                width: double.infinity,
+        body: AnnotatedRegion<SystemUiOverlayStyle>(
+          value: SystemUiOverlayStyle.light,
+          child: Stack(
+            children: [
+              Center(
+                child: Image.asset(
+                  'assets/images/homeBG.png',
+                  fit: BoxFit.cover,
+                  height: double.infinity,
+                  width: double.infinity,
+                ),
               ),
-            ),
-            Column(
-              children: [
-                Stack(
-                  children: [
-                    Align(
-                        alignment: Alignment.topCenter,
-                        child: Image.asset(
-                          'assets/images/quickFitColored.png',
-                          height: 200,
-                          width: 200,
-                        )),
-                    Image.asset('assets/components/darkLine.png',
-                        height: 240),
-                    Image.asset('assets/components/dimLine.png', height: 250),
-                    Positioned(
-                      top: 40,
-                      left: 25,
-                      child: IconButton(
-                        color: Colors.red,
-                        onPressed: () {
-                          Scaffold.of(context).openDrawer();
-                        },
-                        icon: Icon(
-                          Icons.menu,
-                          size: 30,
+              Column(
+                children: [
+                  Stack(
+                    children: [
+                      Align(
+                          alignment: Alignment.topCenter,
+                          child: Image.asset(
+                            'assets/images/quickFitColored.png',
+                            height: 200,
+                            width: 200,
+                          )),
+                      Image.asset('assets/components/darkLine.png',
+                          height: 240),
+                      Image.asset('assets/components/dimLine.png', height: 250),
+                      Positioned(
+                        top: 40,
+                        left: 25,
+                        child: IconButton(
+                          color: Colors.red,
+                          onPressed: () {
+                            Scaffold.of(context).openDrawer();
+                          },
+                          icon: Icon(
+                            Icons.menu,
+                            size: 30,
+                          ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-                // TODO HOME HERE
-                Container(
-                  margin: const EdgeInsets.only(top: 5),
-                  child: Text(
-                    'Choose your Brand',
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.w700,
-                        fontSize: 18
+                    ],
+                  ),
+                  // TODO HOME HERE
+                  Container(
+                    margin: const EdgeInsets.only(top: 5),
+                    child: Text(
+                      'Choose your Brand',
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.w700,
+                          fontSize: 18
+                      ),
                     ),
                   ),
-                ),
-                Container(
-                  padding: const EdgeInsets.all(20),
-                  child: Material(
-                    elevation: 5.0,
-                    borderRadius: BorderRadius.circular(25.0),
-                    child: TextField(
-                      onChanged: (text){
-                        text = text.toLowerCase();
-                        setState(() {
-                          filteredBrandList = brandsList.where((brand){
-                            var brandName = brand.brandName.toLowerCase();
-                            return brandName.contains(text);
-                          }).toList();
-                        });
-                      },
-                      decoration: InputDecoration(
-                          contentPadding: const EdgeInsets.symmetric(
-                              horizontal: 30, vertical: 15),
-                          hintText: 'Search brand...',
-                          prefixIcon:Icon(Icons.search),
-                          border: InputBorder.none),
+                  Container(
+                    padding: const EdgeInsets.all(20),
+                    child: Material(
+                      elevation: 5.0,
+                      borderRadius: BorderRadius.circular(25.0),
+                      child: TextField(
+                        onChanged: (text){
+                          text = text.toLowerCase();
+                          setState(() {
+                            filteredBrandList = brandsList.where((brand){
+                              var brandName = brand.brandName.toLowerCase();
+                              return brandName.contains(text);
+                            }).toList();
+                          });
+                        },
+                        decoration: InputDecoration(
+                            contentPadding: const EdgeInsets.symmetric(
+                                horizontal: 30, vertical: 15),
+                            hintText: 'Search brand...',
+                            prefixIcon:Icon(Icons.search),
+                            border: InputBorder.none),
+                      ),
                     ),
                   ),
-                ),
-                FutureBuilder(
-                  future: _future,
-                  builder: (BuildContext context, AsyncSnapshot<List> brands){
-                    if(brands.hasData){
-                      return Expanded(
-                        child: GridView.builder(
-                          cacheExtent: 900,
-                          padding: const EdgeInsets.all(5),
-                          itemCount: filteredBrandList.length,
-                          physics: AlwaysScrollableScrollPhysics(),
-                          shrinkWrap: false,
-                          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 2),
-                          itemBuilder: (BuildContext context, int index) {
-                            return InkWell(
-                              onTap: (){
-                                Navigator.of(context).push(new MaterialPageRoute(builder: (context){
-                                  return ServicesScreen(brand: filteredBrandList[index], position: _currentPosition, user: user,);
-                                }));
-                              },
-                              child: Container(
-                                padding: const EdgeInsets.all(10),
-                                child: new Card(
-                                  color: Colors.white.withOpacity(0.7),
-                                  child: new GridTile(
-                                    child: Center(
-                                      child: Column(
-                                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                        children: [
-                                          CachedNetworkImage(
-                                            imageUrl: 'http://sania.co.uk/quick_fix/brands/${filteredBrandList[index].image_url}', height: 80, width: 100,
-                                            placeholder: (context, url) => CircularProgressIndicator(),
-                                            errorWidget: (context, url, error) => Icon(Icons.error),
-                                          ),
-                                          Text(
-                                            '${filteredBrandList[index].brandName}',
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 20,
-                                              fontWeight: FontWeight.w500
+                  FutureBuilder(
+                    future: _future,
+                    builder: (BuildContext context, AsyncSnapshot<List> brands){
+                      if(brands.hasData){
+                        return Expanded(
+                          child: GridView.builder(
+                            cacheExtent: 900,
+                            padding: const EdgeInsets.all(5),
+                            itemCount: filteredBrandList.length,
+                            physics: AlwaysScrollableScrollPhysics(),
+                            shrinkWrap: false,
+                            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 2),
+                            itemBuilder: (BuildContext context, int index) {
+                              return InkWell(
+                                onTap: (){
+                                  Navigator.of(context).push(new MaterialPageRoute(builder: (context){
+                                    return ServicesScreen(brand: filteredBrandList[index], position: _currentPosition, user: user,);
+                                  }));
+                                },
+                                child: Container(
+                                  padding: const EdgeInsets.all(10),
+                                  child: new Card(
+                                    color: Colors.white.withOpacity(0.7),
+                                    child: new GridTile(
+                                      child: Center(
+                                        child: Column(
+                                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                          children: [
+                                            CachedNetworkImage(
+                                              imageUrl: 'http://sania.co.uk/quick_fix/brands/${filteredBrandList[index].image_url}', height: 80, width: 100,
+                                              placeholder: (context, url) => CircularProgressIndicator(),
+                                              errorWidget: (context, url, error) => Icon(Icons.error),
                                             ),
-                                          )
-                                        ],
+                                            Text(
+                                              '${filteredBrandList[index].brandName}',
+                                              style: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.w500
+                                              ),
+                                            )
+                                          ],
+                                        ),
                                       ),
                                     ),
                                   ),
                                 ),
-                              ),
-                            );
-                          },
-                        ),
-                      );
-                    }else{
-                      return Center(child: CircularProgressIndicator(),);
-                    }
-                  },
-                ),
-              ],
-            ),
-          ],
+                              );
+                            },
+                          ),
+                        );
+                      }else{
+                        return Center(child: CircularProgressIndicator(),);
+                      }
+                    },
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -8,6 +8,8 @@
     <string>This application requires location services to work</string>
     <key>NSLocationAlwaysUsageDescription</key>
     <string>This application requires location services to work</string>
+    <key>LocationAlwaysUsageDescription</key>
+    <string>Location Always Usage Description</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>

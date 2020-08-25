@@ -10,9 +10,6 @@ SharedPreferences prefs;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   prefs = await SharedPreferences.getInstance();
-  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-    statusBarColor: Colors.transparent, // status bar color
-  ));
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,

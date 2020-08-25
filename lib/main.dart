@@ -19,7 +19,7 @@ void main() async {
       statusBarIconBrightness: Brightness.light,
 
       // statusBarBrightness is used to set Status bar icon color in iOS.
-      statusBarBrightness: Brightness.light
+      statusBarBrightness: Brightness.dark
     // Here light means dark color Status bar icons.
 
   ));

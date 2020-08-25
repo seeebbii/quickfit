@@ -58,8 +58,18 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: Colors.black, // status bar color
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark.copyWith(
+
+      // statusBarColor is used to set Status bar color in Android devices.
+        statusBarColor: Color(0xFFFF6F00),
+
+        // To make Status bar icons color white in Android devices.
+        statusBarIconBrightness: Brightness.light,
+
+        // statusBarBrightness is used to set Status bar icon color in iOS.
+        statusBarBrightness: Brightness.light
+      // Here light means dark color Status bar icons.
+
     ));
     return SafeArea(
       child: Scaffold(

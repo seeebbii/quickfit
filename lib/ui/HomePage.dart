@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_statusbarcolor/flutter_statusbarcolor.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:quickfit/bottom_nav_screens/ChatScreen.dart';
 import 'package:quickfit/bottom_nav_screens/HomeScreen.dart';
@@ -55,6 +56,17 @@ class _HomePageState extends State<HomePage> {
 
   int currentTab;
   final PageStorageBucket bucket = PageStorageBucket();
+  DateTime currentBackPressTime;
+  Future<bool> onWillPop() {
+    DateTime now = DateTime.now();
+    if (currentBackPressTime == null ||
+        now.difference(currentBackPressTime) > Duration(seconds: 2)) {
+      currentBackPressTime = now;
+      Fluttertoast.showToast(msg: 'Press again to exit', backgroundColor: Colors.black);
+      return Future.value(false);
+    }
+    return Future.value(true);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -73,9 +85,12 @@ class _HomePageState extends State<HomePage> {
     ));
     return SafeArea(
       child: Scaffold(
-        body: PageStorage(
-          child: currentScreen,
-          bucket: bucket,
+        body: WillPopScope(
+          onWillPop: onWillPop,
+          child: PageStorage(
+            child: currentScreen,
+            bucket: bucket,
+          ),
         ),
         floatingActionButton: FloatingActionButton(
           backgroundColor: Colors.red,

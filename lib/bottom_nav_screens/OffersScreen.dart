@@ -158,6 +158,8 @@ class _OffersScreenState extends State<OffersScreen> {
                                         Text(
                                           'Detail: ${offersList[index]
                                               .details}',
+                                          overflow: TextOverflow.ellipsis,
+                                          maxLines: 2,
                                           style: TextStyle(
                                               color: Colors.black,
                                               fontSize: 20

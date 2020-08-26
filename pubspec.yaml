@@ -64,6 +64,7 @@ flutter:
      - assets/images/offersBG.png
      - assets/images/serviceBG.png
      - assets/images/joinBG.png
+     - assets/images/autoBodyBG.png
      - assets/images/personIMG.png
      - assets/images/quickFitColored.png
      - assets/components/darkLine.png

@@ -4,6 +4,8 @@ import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:quickfit/model/User.dart';
+import 'package:quickfit/ui/LoginScreen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class ProfileScreen extends StatefulWidget {
   User user;
@@ -195,6 +197,128 @@ class _ProfileScreenState extends State<ProfileScreen> {
       body: jsonObj,
     );
     print(response.body);
+    showDialog(
+      barrierDismissible: false,
+      context: context,
+      builder: (BuildContext context) {
+        return Dialog(
+          shape: RoundedRectangleBorder(
+              borderRadius:
+              BorderRadius.circular(25)),
+          child: Stack(
+            overflow: Overflow.visible,
+            alignment: Alignment.topCenter,
+            children: [
+              Container(
+                height: 250,
+                child: Padding(
+                  padding:
+                  const EdgeInsets.all(20.0),
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 50,
+                      ),
+                      Center(
+                        child: Text(
+                          'Profile Updated Successfully',
+                          style: TextStyle(
+                              letterSpacing: 1.2,
+                              fontSize: 19,
+                              fontWeight:
+                              FontWeight.bold),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Center(
+                        child: Text(
+                          'Changes will apply once you login again...',
+                          style: TextStyle(
+                            fontSize: 16,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          FlatButton(
+                            padding: const EdgeInsets.all(10),
+                            child: Text(
+                              'I\'ll do it later',
+                              style: TextStyle(
+                                  color:
+                                  Colors.white,
+                                  fontSize: 15),
+                            ),
+                            color: Colors.red,
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                            shape: RoundedRectangleBorder(
+                                borderRadius:
+                                BorderRadius
+                                    .circular(
+                                    20)
+                            ),
+                          ),
+                          FlatButton(
+                            padding: const EdgeInsets.all(10),
+                            child: Text(
+                              'LogOut Now',
+                              style: TextStyle(
+                                  color:
+                                  Colors.white,
+                                  fontSize: 15),
+                            ),
+                            color: Colors.red,
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                              logOutHandler(context);
+                            },
+                            shape: RoundedRectangleBorder(
+                                borderRadius:
+                                BorderRadius
+                                    .circular(
+                                    20)
+                            ),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              Positioned(
+                top: -50,
+                child: CircleAvatar(
+                  backgroundColor: Colors.red,
+                  radius: 50,
+                  child: Icon(
+                    Icons.done_all_rounded,
+                    color: Colors.white,
+                    size: 50,
+                  ),
+                ),
+              )
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  void logOutHandler(BuildContext context) async {
+    final prefs = await SharedPreferences.getInstance();
+    prefs.setBool('loggedIn', false);
+    Navigator.of(context)
+        .pushReplacement(new MaterialPageRoute(builder: (context) {
+      return LoginScreen();
+    }));
   }
 
   Widget _buildEmailWidget() {

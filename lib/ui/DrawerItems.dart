@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quickfit/model/User.dart';
 import 'package:quickfit/ui/AboutUsScreen.dart';
+import 'package:quickfit/ui/JoinUsScreen.dart';
 import 'package:quickfit/ui/LoginScreen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -100,6 +101,12 @@ class DrawerItems extends StatelessWidget {
           Container(
             color: Colors.grey.shade200,
             child: new ListTile(
+              onTap: (){
+                Navigator.of(context).pop();
+                Navigator.of(context).push(new MaterialPageRoute(builder: (_){
+                  return JoinUsScreen();
+                }));
+              },
               title: Text(
                 'Join Us',
               ),

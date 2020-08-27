@@ -299,7 +299,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   backgroundColor: Colors.red,
                   radius: 50,
                   child: Icon(
-                    Icons.done_all_rounded,
+                    Icons.done_all,
                     color: Colors.white,
                     size: 50,
                   ),

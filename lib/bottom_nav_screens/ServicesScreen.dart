@@ -143,7 +143,7 @@ class _ServicesScreenState extends State<ServicesScreen> {
                                         alignment: Alignment.topCenter,
                                         children: [
                                           Container(
-                                            height: 250,
+                                            height: 300,
                                             child: Padding(
                                               padding:
                                                   const EdgeInsets.all(20.0),
@@ -160,12 +160,14 @@ class _ServicesScreenState extends State<ServicesScreen> {
                                                             FontWeight.bold),
                                                   ),
                                                   SizedBox(
-                                                    height: 20,
+                                                    height: 15,
                                                   ),
                                                   Text(
-                                                      'You have selected Brand: ${widget.brand.brandName} and Service: ${filteredServicesList[index].serviceName} '),
+                                                      'You have selected Brand: ${widget.brand.brandName} and Service: ${filteredServicesList[index].serviceName} ', style: TextStyle(
+                                                    fontSize: 15
+                                                  ),),
                                                   SizedBox(
-                                                    height: 15,
+                                                    height: 30,
                                                   ),
                                                   Row(
                                                     mainAxisAlignment:

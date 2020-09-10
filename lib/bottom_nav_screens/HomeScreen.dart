@@ -23,11 +23,12 @@ class _HomeScreenState extends State<HomeScreen> {
   List<BrandModel> brandsList = <BrandModel>[];
   List<BrandModel> filteredBrandList = <BrandModel>[];
   Position _currentPosition;
-
+  ScrollController _controller;
   Future<List> _future;
   @override
   void initState() {
     // TODO: implement initState
+    _controller = ScrollController(initialScrollOffset: 28.00145346829629);
     super.initState();
     getSavedUser();
     _getCurrentLocation();
@@ -120,6 +121,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     if(brands.hasData){
                       return Expanded(
                         child: GridView.builder(
+                          controller: _controller,
                           cacheExtent: 900,
                           padding: const EdgeInsets.all(5),
                           itemCount: filteredBrandList.length,
@@ -144,7 +146,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                         children: [
                                           CachedNetworkImage(
-                                            imageUrl: 'http://sania.co.uk/quick_fix/brands/${filteredBrandList[index].image_url}', height: 80, width: 100,
+                                            imageUrl: 'http://sania.co.uk/quick_fix/brands/${filteredBrandList[index].image_url}', height: 50, width: 100,
                                             placeholder: (context, url) => CircularProgressIndicator(),
                                             errorWidget: (context, url, error) => Icon(Icons.error),
                                           ),

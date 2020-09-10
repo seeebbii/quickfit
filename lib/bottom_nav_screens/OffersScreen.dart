@@ -98,22 +98,30 @@ class _OffersScreenState extends State<OffersScreen> {
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  ClipRRect(
-                                      borderRadius: BorderRadius.circular(200),
-                                      child: Container(
-                                        decoration: BoxDecoration(
-                                            shape: BoxShape.circle,
-                                            border: Border.all(
-                                                width: 5, color: Colors.red)),
-                                        child: CircleAvatar(
-                                            backgroundColor:
-                                            Colors.redAccent.shade100,
-                                            maxRadius: 50,
-                                            backgroundImage: NetworkImage(
-                                              'http://sania.co.uk/quick_fix/${offersList[index]
-                                                  .image_url}',
-                                            )),
-                                      )
+                                  GestureDetector(
+                                    onTap: () async {
+                                      await showDialog(
+                                          context: context,
+                                          builder: (_) => ImageDialog(imageUrl: offersList[index].image_url,)
+                                      );
+                                    },
+                                    child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(200),
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                              shape: BoxShape.circle,
+                                              border: Border.all(
+                                                  width: 5, color: Colors.red)),
+                                          child: CircleAvatar(
+                                              backgroundColor:
+                                              Colors.redAccent.shade100,
+                                              maxRadius: 50,
+                                              backgroundImage: NetworkImage(
+                                                'http://sania.co.uk/quick_fix/${offersList[index]
+                                                    .image_url}',
+                                              )),
+                                        )
+                                    ),
                                   ),
                                   SizedBox(
                                     width: 25,
@@ -349,5 +357,25 @@ class _OffersScreenState extends State<OffersScreen> {
           textColor: Colors.white,
           fontSize: 16.0);
     }
+  }
+}
+class ImageDialog extends StatelessWidget {
+
+  String imageUrl;
+  ImageDialog({Key key, this.imageUrl}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Dialog(
+      child: Container(
+        width: 500,
+        height: 500,
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                image: NetworkImage("http://sania.co.uk/quick_fix/${this.imageUrl}"),
+                fit: BoxFit.cover
+            )
+        ),
+      ),
+    );
   }
 }

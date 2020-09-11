@@ -77,12 +77,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                       decoration: BoxDecoration(
                                           shape: BoxShape.circle,
                                           border: Border.all(
-                                              width: 5, color: Colors.red)),
+                                              width: 5, color: Color(0xFFC11010))),
                                       child: imageSelected == null
                                           ? CircleAvatar(
                                               maxRadius: 80,
                                               backgroundColor:
-                                                  Colors.redAccent.shade100,
+                                              Color(0xFFC11010),
                                               child: Icon(
                                                 Icons.person,
                                                 size: 100,
@@ -103,11 +103,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                       decoration: BoxDecoration(
                                           shape: BoxShape.circle,
                                           border: Border.all(
-                                              width: 5, color: Colors.red)),
+                                              width: 5, color: Color(0xFFC11010))),
                                       child: imageSelected == null
                                           ? CircleAvatar(
                                               backgroundColor:
-                                                  Colors.redAccent.shade100,
+                                              Color(0xFFC11010),
                                               maxRadius: 80,
                                               backgroundImage: NetworkImage(
                                                 'http://sania.co.uk/quick_fix/${widget.user.image_url}',
@@ -126,7 +126,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         top: 40,
                         left: 25,
                         child: IconButton(
-                          color: Colors.red,
+                          color: Color(0xFFC11010),
                           onPressed: () {
                             Scaffold.of(context).openDrawer();
                           },
@@ -157,7 +157,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       onPressed: (){
                         updateMyProfile();
                       },
-                      color: Colors.red,
+                      color: Color(0xFFC11010),
                     ),
                   )
                 ],
@@ -255,7 +255,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   Colors.white,
                                   fontSize: 15),
                             ),
-                            color: Colors.red,
+                            color: Color(0xFFC11010),
                             onPressed: () {
                               Navigator.of(context).pop();
                             },
@@ -275,7 +275,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   Colors.white,
                                   fontSize: 15),
                             ),
-                            color: Colors.red,
+                            color: Color(0xFFC11010),
                             onPressed: () {
                               Navigator.of(context).pop();
                               logOutHandler(context);
@@ -296,7 +296,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               Positioned(
                 top: -50,
                 child: CircleAvatar(
-                  backgroundColor: Colors.red,
+                  backgroundColor: Color(0xFFC11010),
                   radius: 50,
                   child: Icon(
                     Icons.done_all,
@@ -332,7 +332,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             child: Text(
               'Email: ',
               style: TextStyle(
-                color: Colors.red,
+                color: Color(0xFFC11010),
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -380,7 +380,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             child: Text(
               'Name: ',
               style: TextStyle(
-                color: Colors.red,
+                color: Color(0xFFC11010),
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -427,7 +427,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             child: Text(
               'Phone: ',
               style: TextStyle(
-                color: Colors.red,
+                color: Color(0xFFC11010),
                 fontWeight: FontWeight.bold,
               ),
             ),

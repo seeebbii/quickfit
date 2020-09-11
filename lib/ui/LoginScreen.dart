@@ -88,7 +88,7 @@ class _LoginScreenState extends State<LoginScreen> {
           borderRadius: BorderRadius.circular(15.0)),
       child: AwesomeLoader(
         loaderType: AwesomeLoader.AwesomeLoader4,
-        color: Colors.redAccent
+        color: Color(0xFFC11010)
       ),
     ),
   );
@@ -184,7 +184,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(15.0),
                               ),
-                              color: Colors.redAccent.shade200,
+                              color: Color(0xFFC11010),
                               onPressed: loginValidate,
                               child: Text(
                                 'Login',
@@ -234,22 +234,22 @@ class _LoginScreenState extends State<LoginScreen> {
       margin: const EdgeInsets.only(top: 15),
       child: Theme(
         data: new ThemeData(
-          primaryColor: Colors.redAccent,
+          primaryColor: Color(0xFFC11010),
           primaryColorDark: Colors.red,
         ),
         child: new TextField(
           keyboardType: TextInputType.emailAddress,
           controller: emailController,
-          cursorColor: Colors.red,
+          cursorColor: Color(0xFFC11010),
           decoration: new InputDecoration(
             prefixIcon: Icon(Icons.email),
             errorText: _validate == false ? null :'Value Can\'t Be Empty',
             labelText: "Email",
-            focusColor: Colors.red,
+            focusColor: Color(0xFFC11010),
             fillColor: Colors.white,
             border: new OutlineInputBorder(
               borderRadius: new BorderRadius.circular(25.0),
-              borderSide: new BorderSide(color: Colors.red),
+              borderSide: new BorderSide(color: Color(0xFFC11010)),
             ),
             //fillColor: Colors.green
           ),
@@ -268,22 +268,22 @@ class _LoginScreenState extends State<LoginScreen> {
       padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
       child: Theme(
         data: new ThemeData(
-          primaryColor: Colors.redAccent,
+          primaryColor: Color(0xFFC11010),
           primaryColorDark: Colors.red,
         ),
         child: new TextField(
           obscureText: true,
           controller: passwordController,
-          cursorColor: Colors.red,
+          cursorColor: Color(0xFFC11010),
           decoration: new InputDecoration(
             prefixIcon: Icon(Icons.lock),
             errorText: _validate == false ? null :'Value Can\'t Be Empty',
             labelText: "Password",
-            focusColor: Colors.red,
+            focusColor: Color(0xFFC11010),
             fillColor: Colors.white,
             border: new OutlineInputBorder(
               borderRadius: new BorderRadius.circular(25.0),
-              borderSide: new BorderSide(color: Colors.red),
+              borderSide: new BorderSide(color: Color(0xFFC11010)),
             ),
             //fillColor: Colors.green
           ),
@@ -323,7 +323,7 @@ class _LoginScreenState extends State<LoginScreen> {
               TextSpan(
                 text: 'Create one',
                 style: TextStyle(
-                  color: Colors.redAccent,
+                  color: Color(0xFFC11010),
                   decoration: TextDecoration.underline,
                   fontSize: 18.0,
                   fontWeight: FontWeight.bold,

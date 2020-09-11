@@ -67,7 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       top: 40,
                       left: 25,
                       child: IconButton(
-                        color: Colors.red,
+                        color: Color(0xFFC11010),
                         onPressed: () {
                           Scaffold.of(context).openDrawer();
                         },

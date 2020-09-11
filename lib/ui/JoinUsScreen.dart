@@ -34,7 +34,7 @@ class JoinUsScreen extends StatelessWidget {
                         top: 40,
                         left: 25,
                         child: IconButton(
-                          color: Colors.red,
+                          color: Color(0xFFC11010),
                           onPressed: () {
                             Navigator.of(context).pop();
                           },
@@ -53,7 +53,7 @@ class JoinUsScreen extends StatelessWidget {
                   Text(
                     'Join Us: ',
                     style: TextStyle(
-                        color: Colors.red,
+                        color: Color(0xFFC11010),
                         fontWeight: FontWeight.w500,
                         fontSize: 25),
                   ),
@@ -87,12 +87,12 @@ class JoinUsScreen extends StatelessWidget {
                           color: Colors.white.withOpacity(0.5),
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(25),
-                              side: BorderSide(color: Colors.red, width: 2)),
+                              side: BorderSide(color: Color(0xFFC11010), width: 2)),
                           onPressed: () {},
                           child: Text(
                             'Follow to Quicfitautos.com',
                             style: TextStyle(
-                                color: Colors.red, fontWeight: FontWeight.w400),
+                                color: Color(0xFFC11010), fontWeight: FontWeight.w400),
                           ))),
                   Container(
                       margin: const EdgeInsets.only(top: 2, left: 15),

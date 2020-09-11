@@ -80,7 +80,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         floatingActionButton: FloatingActionButton(
-          backgroundColor: Colors.red,
+          backgroundColor: Color(0xFFC11010),
           child: Icon(Icons.chat),
           onPressed: () {
             setState(() {
@@ -119,7 +119,7 @@ class _HomePageState extends State<HomePage> {
                             children: <Widget>[
                               Icon(
                                 Icons.home,
-                                color: currentTab == 0 ? Colors.red : Colors.grey,
+                                color: currentTab == 0 ? Color(0xFFC11010) : Colors.grey,
                               ),
                               Text(
                                 'Home',
@@ -145,7 +145,7 @@ class _HomePageState extends State<HomePage> {
                             children: <Widget>[
                               Icon(
                                 Icons.location_on,
-                                color: currentTab == 1 ? Colors.red : Colors.grey,
+                                color: currentTab == 1 ? Color(0xFFC11010) : Colors.grey,
                               ),
                               Text(
                                 'Map',
@@ -178,7 +178,7 @@ class _HomePageState extends State<HomePage> {
                             children: <Widget>[
                               Icon(
                                 Icons.local_offer,
-                                color: currentTab == 2 ? Colors.red : Colors.grey,
+                                color: currentTab == 2 ? Color(0xFFC11010) : Colors.grey,
                               ),
                               Text(
                                 'Offers',
@@ -204,7 +204,7 @@ class _HomePageState extends State<HomePage> {
                             children: <Widget>[
                               Icon(
                                 Icons.person,
-                                color: currentTab == 3 ? Colors.red : Colors.grey,
+                                color: currentTab == 3 ? Color(0xFFC11010) : Colors.grey,
                               ),
                               Text(
                                 'Person',
@@ -221,7 +221,7 @@ class _HomePageState extends State<HomePage> {
                 Divider(
                   thickness: 10,
                   height: 10,
-                  color: Colors.red,
+                  color: Color(0xFFC11010),
                 )
               ],
             ),

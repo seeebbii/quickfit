@@ -65,7 +65,7 @@ class _ServicesScreenState extends State<ServicesScreen> {
                       top: 40,
                       left: 25,
                       child: IconButton(
-                        color: Colors.red,
+                        color: Color(0xFFC11010),
                         onPressed: () {
                           Navigator.of(context).pop();
                         },
@@ -182,7 +182,7 @@ class _ServicesScreenState extends State<ServicesScreen> {
                                                                   Colors.white,
                                                               fontSize: 15),
                                                         ),
-                                                        color: Colors.red,
+                                                        color: Color(0xFFC11010),
                                                         onPressed: () {
                                                           Navigator.of(context)
                                                               .pop();
@@ -204,7 +204,7 @@ class _ServicesScreenState extends State<ServicesScreen> {
                                                                   FontWeight
                                                                       .bold),
                                                         ),
-                                                        color: Colors.red,
+                                                        color: Color(0xFFC11010),
                                                         shape: RoundedRectangleBorder(
                                                             borderRadius:
                                                                 BorderRadius
@@ -226,7 +226,7 @@ class _ServicesScreenState extends State<ServicesScreen> {
                                           Positioned(
                                             top: -50,
                                             child: CircleAvatar(
-                                              backgroundColor: Colors.red,
+                                              backgroundColor: Color(0xFFC11010),
                                               radius: 50,
                                               child: Icon(
                                                 Icons.assignment_late,
@@ -392,7 +392,7 @@ class _ServicesScreenState extends State<ServicesScreen> {
                                     Colors.white,
                                     fontSize: 15),
                               ),
-                              color: Colors.red,
+                              color: Color(0xFFC11010),
                               onPressed: () {
                                 Navigator.of(context)
                                     .pop();
@@ -415,7 +415,7 @@ class _ServicesScreenState extends State<ServicesScreen> {
                 Positioned(
                   top: -50,
                   child: CircleAvatar(
-                    backgroundColor: Colors.red,
+                    backgroundColor: Color(0xFFC11010),
                     radius: 50,
                     child: Icon(
                       Icons.assignment_turned_in,

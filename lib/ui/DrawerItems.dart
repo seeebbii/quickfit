@@ -21,7 +21,7 @@ class DrawerItems extends StatelessWidget {
             decoration: BoxDecoration(color: Colors.white),
             accountName: Text(user.name,
                 style: TextStyle(
-                    color: Colors.red,
+                    color: Color(0xFFC11010),
                     fontSize: 18,
                     fontWeight: FontWeight.w500)),
             accountEmail: Text(
@@ -33,7 +33,7 @@ class DrawerItems extends StatelessWidget {
             ),
             currentAccountPicture: user.image_url == 'image name'
                 ? CircleAvatar(
-                    backgroundColor: Colors.red,
+                    backgroundColor: Color(0xFFC11010),
                     child: Icon(
                       Icons.person,
                       color: Colors.white,
@@ -126,11 +126,11 @@ class DrawerItems extends StatelessWidget {
             },
             leading: Icon(
               Icons.exit_to_app,
-              color: Colors.red,
+              color: Color(0xFFC11010),
             ),
             title: Text(
               'Log Out',
-              style: TextStyle(color: Colors.red),
+              style: TextStyle(color: Color(0xFFC11010)),
             ),
           )
         ],

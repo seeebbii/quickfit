@@ -57,7 +57,7 @@ class _ChatScreenState extends State<ChatScreen> {
           IconButton(
             icon: Icon(Icons.send),
             iconSize: 25,
-            color: Colors.red,
+            color: Color(0xFFC11010),
             onPressed: () {
               if (chatList.isNotEmpty) {
                 _scrollController.animateTo(
@@ -114,7 +114,7 @@ class _ChatScreenState extends State<ChatScreen> {
                       top: 40,
                       left: 25,
                       child: IconButton(
-                        color: Colors.red,
+                        color: Color(0xFFC11010),
                         onPressed: () {
                           Scaffold.of(context).openDrawer();
                         },
@@ -171,7 +171,7 @@ class _ChatScreenState extends State<ChatScreen> {
                                       margin:
                                           EdgeInsets.symmetric(vertical: 10),
                                       decoration: BoxDecoration(
-                                        color: Colors.red,
+                                        color: Color(0xFFC11010),
                                         borderRadius: BorderRadius.circular(15),
                                         boxShadow: [
                                           BoxShadow(
@@ -236,7 +236,7 @@ class _ChatScreenState extends State<ChatScreen> {
                         child: Text(
                           'Start Conversation Now!',
                           style: TextStyle(
-                              color: Colors.red,
+                              color: Color(0xFFC11010),
                               fontSize: 20,
                               fontWeight: FontWeight.bold),
                         ),

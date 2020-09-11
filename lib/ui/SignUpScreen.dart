@@ -107,7 +107,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           borderRadius: BorderRadius.circular(15.0)),
       child: AwesomeLoader(
           loaderType: AwesomeLoader.AwesomeLoader4,
-          color: Colors.redAccent
+          color: Color(0xFFC11010)
       ),
     ),
   );
@@ -188,7 +188,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(15.0),
                           ),
-                          color: Colors.redAccent.shade200,
+                          color: Color(0xFFC11010),
                           onPressed: registerValidate,
                           child: Text(
                             'Register',
@@ -224,21 +224,21 @@ class _SignUpScreenState extends State<SignUpScreen> {
       margin: const EdgeInsets.only(top: 15),
       child: Theme(
         data: new ThemeData(
-          primaryColor: Colors.redAccent,
+          primaryColor: Color(0xFFC11010),
           primaryColorDark: Colors.red,
         ),
         child: new TextField(
           controller: nameController,
-          cursorColor: Colors.red,
+          cursorColor: Color(0xFFC11010),
           decoration: new InputDecoration(
             prefixIcon: Icon(Icons.person),
             errorText: _validate == false ? null : 'Value Can\'t Be Empty',
             labelText: "Full Name",
-            focusColor: Colors.red,
+            focusColor: Color(0xFFC11010),
             fillColor: Colors.white,
             border: new OutlineInputBorder(
               borderRadius: new BorderRadius.circular(25.0),
-              borderSide: new BorderSide(color: Colors.red),
+              borderSide: new BorderSide(color: Color(0xFFC11010)),
             ),
             //fillColor: Colors.green
           ),
@@ -258,22 +258,22 @@ class _SignUpScreenState extends State<SignUpScreen> {
       margin: const EdgeInsets.only(top: 15),
       child: Theme(
         data: new ThemeData(
-          primaryColor: Colors.redAccent,
+          primaryColor: Color(0xFFC11010),
           primaryColorDark: Colors.red,
         ),
         child: new TextField(
           keyboardType: TextInputType.phone,
           controller: phoneController,
-          cursorColor: Colors.red,
+          cursorColor: Color(0xFFC11010),
           decoration: new InputDecoration(
             prefixIcon: Icon(Icons.contacts),
             errorText: _validate == false ? null : 'Value Can\'t Be Empty',
             labelText: "Phone Number",
-            focusColor: Colors.red,
+            focusColor: Color(0xFFC11010),
             fillColor: Colors.white,
             border: new OutlineInputBorder(
               borderRadius: new BorderRadius.circular(25.0),
-              borderSide: new BorderSide(color: Colors.red),
+              borderSide: new BorderSide(color: Color(0xFFC11010)),
             ),
             //fillColor: Colors.green
           ),
@@ -292,22 +292,22 @@ class _SignUpScreenState extends State<SignUpScreen> {
       padding: const EdgeInsets.only(left: 20, right: 20, bottom: 3),
       child: Theme(
         data: new ThemeData(
-          primaryColor: Colors.redAccent,
+          primaryColor: Color(0xFFC11010),
           primaryColorDark: Colors.red,
         ),
         child: new TextField(
           obscureText: true,
           controller: rePasswordController,
-          cursorColor: Colors.red,
+          cursorColor: Color(0xFFC11010),
           decoration: new InputDecoration(
             errorText: _validate == false ? null : 'Value Can\'t Be Empty',
             labelText: "Confirm Password",
-            focusColor: Colors.red,
+            focusColor: Color(0xFFC11010),
             prefixIcon: Icon(Icons.lock),
             fillColor: Colors.white,
             border: new OutlineInputBorder(
               borderRadius: new BorderRadius.circular(25.0),
-              borderSide: new BorderSide(color: Colors.red),
+              borderSide: new BorderSide(color: Color(0xFFC11010)),
             ),
             //fillColor: Colors.green
           ),
@@ -327,22 +327,22 @@ class _SignUpScreenState extends State<SignUpScreen> {
       margin: const EdgeInsets.only(top: 15),
       child: Theme(
         data: new ThemeData(
-          primaryColor: Colors.redAccent,
+          primaryColor: Color(0xFFC11010),
           primaryColorDark: Colors.red,
         ),
         child: new TextField(
           keyboardType: TextInputType.emailAddress,
           controller: emailController,
-          cursorColor: Colors.red,
+          cursorColor: Color(0xFFC11010),
           decoration: new InputDecoration(
             prefixIcon: Icon(Icons.email),
             errorText: _validate == false ? null : 'Value Can\'t Be Empty',
             labelText: "Email",
-            focusColor: Colors.red,
+            focusColor: Color(0xFFC11010),
             fillColor: Colors.white,
             border: new OutlineInputBorder(
               borderRadius: new BorderRadius.circular(25.0),
-              borderSide: new BorderSide(color: Colors.red),
+              borderSide: new BorderSide(color:Color(0xFFC11010)),
             ),
             //fillColor: Colors.green
           ),
@@ -361,22 +361,22 @@ class _SignUpScreenState extends State<SignUpScreen> {
       padding: const EdgeInsets.all(20),
       child: Theme(
         data: new ThemeData(
-          primaryColor: Colors.redAccent,
+          primaryColor: Color(0xFFC11010),
           primaryColorDark: Colors.red,
         ),
         child: new TextField(
           obscureText: true,
           controller: passwordController,
-          cursorColor: Colors.red,
+          cursorColor: Color(0xFFC11010),
           decoration: new InputDecoration(
             prefixIcon: Icon(Icons.lock),
             errorText: _validate == false ? null : 'Value Can\'t Be Empty',
             labelText: "Password",
-            focusColor: Colors.red,
+            focusColor: Color(0xFFC11010),
             fillColor: Colors.white,
             border: new OutlineInputBorder(
               borderRadius: new BorderRadius.circular(25.0),
-              borderSide: new BorderSide(color: Colors.red),
+              borderSide: new BorderSide(color: Color(0xFFC11010)),
             ),
             //fillColor: Colors.green
           ),
@@ -412,7 +412,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               TextSpan(
                 text: 'Sign in',
                 style: TextStyle(
-                  color: Colors.redAccent,
+                  color: Color(0xFFC11010),
                   decoration: TextDecoration.underline,
                   fontSize: 18.0,
                   fontWeight: FontWeight.bold,

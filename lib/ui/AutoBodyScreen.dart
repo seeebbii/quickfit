@@ -34,7 +34,7 @@ class AutoBodyScreen extends StatelessWidget {
                         top: 40,
                         left: 25,
                         child: IconButton(
-                          color: Colors.red,
+                          color: Color(0xFFC11010),
                           onPressed: () {
                             Navigator.of(context).pop();
                           },
@@ -53,7 +53,7 @@ class AutoBodyScreen extends StatelessWidget {
                   Text(
                     'Auto Body Shop: ',
                     style: TextStyle(
-                        color: Colors.red,
+                        color: Color(0xFFC11010),
                         fontWeight: FontWeight.w500,
                         fontSize: 25
                     ),

@@ -64,7 +64,7 @@ class _MapScreenState extends State<MapScreen> {
       floatingActionButton: Padding(
         padding: const EdgeInsets.only(bottom: 50.0),
         child: FloatingActionButton.extended(
-          backgroundColor: Colors.red,
+          backgroundColor: Color(0xFFC11010),
           onPressed: goToShop,
           label: Text('To the shop!'),
           icon: Icon(Icons.home),

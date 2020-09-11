@@ -59,7 +59,7 @@ class _OffersScreenState extends State<OffersScreen> {
                       top: 40,
                       left: 25,
                       child: IconButton(
-                        color: Colors.red,
+                        color: Color(0xFFC11010),
                         onPressed: () {
                           Scaffold.of(context).openDrawer();
                         },
@@ -77,7 +77,7 @@ class _OffersScreenState extends State<OffersScreen> {
                   child: Text(
                     'Select Offers',
                     style: TextStyle(
-                        color: Colors.red,
+                        color: Color(0xFFC11010),
                         fontWeight: FontWeight.w600,
                         fontSize: 25),
                   ),
@@ -111,10 +111,10 @@ class _OffersScreenState extends State<OffersScreen> {
                                           decoration: BoxDecoration(
                                               shape: BoxShape.circle,
                                               border: Border.all(
-                                                  width: 5, color: Colors.red)),
+                                                  width: 5, color: Color(0xFFC11010))),
                                           child: CircleAvatar(
                                               backgroundColor:
-                                              Colors.redAccent.shade100,
+                                              Color(0xFFC11010),
                                               maxRadius: 50,
                                               backgroundImage: NetworkImage(
                                                 'http://sania.co.uk/quick_fix/${offersList[index]
@@ -177,7 +177,7 @@ class _OffersScreenState extends State<OffersScreen> {
                                           height: 2,
                                         ),
                                         FlatButton(
-                                          color: Colors.red,
+                                          color: Color(0xFFC11010),
                                           onPressed: () {
                                             sendMyRequest(offersList[index]);
                                           },
@@ -312,7 +312,7 @@ class _OffersScreenState extends State<OffersScreen> {
                                     Colors.white,
                                     fontSize: 15),
                               ),
-                              color: Colors.red,
+                              color:Color(0xFFC11010),
                               onPressed: () {
                                 Navigator.of(context)
                                     .pop();
@@ -333,7 +333,7 @@ class _OffersScreenState extends State<OffersScreen> {
                 Positioned(
                   top: -50,
                   child: CircleAvatar(
-                    backgroundColor: Colors.red,
+                    backgroundColor: Color(0xFFC11010),
                     radius: 50,
                     child: Icon(
                       Icons.assignment_turned_in,

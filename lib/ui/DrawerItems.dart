@@ -14,127 +14,130 @@ class DrawerItems extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Drawer(
-      child: ListView(
-        children: <Widget>[
-          UserAccountsDrawerHeader(
-            decoration: BoxDecoration(color: Colors.white),
-            accountName: Text(user.name,
+    return SizedBox(
+      width: MediaQuery.of(context).size.width * 0.7,
+      child: Drawer(
+        child: ListView(
+          children: <Widget>[
+            UserAccountsDrawerHeader(
+              decoration: BoxDecoration(color: Colors.white),
+              accountName: Text(user.name,
+                  style: TextStyle(
+                      color: Color(0xFFC11010),
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500)),
+              accountEmail: Text(
+                user.email,
                 style: TextStyle(
-                    color: Color(0xFFC11010),
-                    fontSize: 18,
-                    fontWeight: FontWeight.w500)),
-            accountEmail: Text(
-              user.email,
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 15,
-                  fontWeight: FontWeight.w400),
+                    color: Colors.black,
+                    fontSize: 15,
+                    fontWeight: FontWeight.w400),
+              ),
+              currentAccountPicture: user.image_url == 'image name'
+                  ? CircleAvatar(
+                      backgroundColor: Color(0xFFC11010),
+                      child: Icon(
+                        Icons.person,
+                        color: Colors.white,
+                      ),
+                    )
+                  : ClipRRect(
+                      borderRadius: BorderRadius.circular(25),
+                      child: Image.network('http://sania.co.uk/quick_fix/${user.image_url}')),
             ),
-            currentAccountPicture: user.image_url == 'image name'
-                ? CircleAvatar(
-                    backgroundColor: Color(0xFFC11010),
-                    child: Icon(
-                      Icons.person,
-                      color: Colors.white,
-                    ),
-                  )
-                : ClipRRect(
-                    borderRadius: BorderRadius.circular(25),
-                    child: Image.network('http://sania.co.uk/quick_fix/${user.image_url}')),
-          ),
-          SizedBox(
-            height: 2,
-          ),
-          new ListTile(
-            onTap: (){
-              const url = 'https://instagram.com/quickfitautocenter';
-              _launchURL(url);
-            },
-            title: Text(
-              'Portfolio',
+            SizedBox(
+              height: 2,
             ),
-            leading: Image.asset('assets/logo/insta.png', height: 20,),
-          ),
-          SizedBox(
-            height: 2,
-          ),
-          new ListTile(
-            onTap: (){
-              Navigator.of(context).pop();
-              Navigator.of(context).push(new MaterialPageRoute(builder: (_){
-              return AboutUsScreen();
-            }));
-            },
-            title: Text(
-              'About Us',
+            new ListTile(
+              onTap: (){
+                const url = 'https://instagram.com/quickfitautocenter';
+                _launchURL(url);
+              },
+              title: Text(
+                'Portfolio',
+              ),
+              leading: Image.asset('assets/logo/insta.png', height: 20,),
             ),
-            leading: Icon(Icons.supervised_user_circle, size: 20),
-          ),
-          SizedBox(
-            height: 2,
-          ),
-          new ListTile(
-            onTap: (){
-              Navigator.of(context).pop();
-              Navigator.of(context).push(new MaterialPageRoute(builder: (_){
-                return AutoBodyScreen();
+            SizedBox(
+              height: 2,
+            ),
+            new ListTile(
+              onTap: (){
+                Navigator.of(context).pop();
+                Navigator.of(context).push(new MaterialPageRoute(builder: (_){
+                return AboutUsScreen();
               }));
-            },
-            title: Text(
-              'Auto Body Shop',
+              },
+              title: Text(
+                'About Us',
+              ),
+              leading: Icon(Icons.supervised_user_circle, size: 20),
             ),
-            leading: Icon(Icons.local_car_wash, size: 20),
-          ),
-          SizedBox(
-            height: 2,
-          ),
-          new ListTile(
-            onTap: (){
-              Navigator.of(context).pop();
-              Navigator.of(context).push(new MaterialPageRoute(builder: (_){
-                return JoinUsScreen();
-              }));
-            },
-            title: Text(
-              'Join Us',
+            SizedBox(
+              height: 2,
             ),
-            leading: Icon(Icons.person_add, size: 20,),
-          ),
-          SizedBox(
-            height: 2,
-          ),
-          new ListTile(
-            title: Text(
-              'Contact Us',
+            new ListTile(
+              onTap: (){
+                Navigator.of(context).pop();
+                Navigator.of(context).push(new MaterialPageRoute(builder: (_){
+                  return AutoBodyScreen();
+                }));
+              },
+              title: Text(
+                'Auto Body Shop',
+              ),
+              leading: Icon(Icons.local_car_wash, size: 20),
             ),
-            leading: Icon(Icons.call, size: 20),
-          ),
-          SizedBox(
-            height: 5,
-          ),
-          Divider(
-            height: 15,
-            thickness: 2,
-            indent: 50,
-            endIndent: 50,
-          ),
-          new ListTile(
-            onTap: () {
-              Navigator.of(context).pop();
-              logOutHandler(context);
-            },
-            leading: Icon(
-              Icons.exit_to_app,
-              size: 20,
-              color: Color(0xFFC11010),
+            SizedBox(
+              height: 2,
             ),
-            title: Text(
-              'Log Out',
-              style: TextStyle(color: Color(0xFFC11010)),
+            new ListTile(
+              onTap: (){
+                Navigator.of(context).pop();
+                Navigator.of(context).push(new MaterialPageRoute(builder: (_){
+                  return JoinUsScreen();
+                }));
+              },
+              title: Text(
+                'Join Us',
+              ),
+              leading: Icon(Icons.person_add, size: 20,),
             ),
-          )
-        ],
+            SizedBox(
+              height: 2,
+            ),
+            new ListTile(
+              title: Text(
+                'Contact Us',
+              ),
+              leading: Icon(Icons.call, size: 20),
+            ),
+            SizedBox(
+              height: 5,
+            ),
+            Divider(
+              height: 15,
+              thickness: 2,
+              indent: 50,
+              endIndent: 50,
+            ),
+            new ListTile(
+              onTap: () {
+                Navigator.of(context).pop();
+                logOutHandler(context);
+              },
+              leading: Icon(
+                Icons.exit_to_app,
+                size: 20,
+                color: Color(0xFFC11010),
+              ),
+              title: Text(
+                'Log Out',
+                style: TextStyle(color: Color(0xFFC11010)),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

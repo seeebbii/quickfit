@@ -86,6 +86,34 @@ class _ChatScreenState extends State<ChatScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(110.0),
+          child: AppBar(
+            leading: IconButton(
+              color: Colors.white,
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+              icon: Icon(
+                Icons.menu,
+                size: 30,
+              ),
+            ),
+            elevation: 1.65,
+            backgroundColor: Color(0xFFC11010).withOpacity(0.8),
+            centerTitle: true,
+            flexibleSpace: FlexibleSpaceBar(
+              centerTitle: true,
+              title: Image.asset(
+                  'assets/images/quickFitColored.png',
+                  height: 100,
+                  width: 200,
+                  fit: BoxFit.fill
+              ),
+            ),
+            shadowColor:Color(0xFFC11010),
+          ),
+        ),
         body: Stack(
           children: [
             Center(
@@ -99,33 +127,6 @@ class _ChatScreenState extends State<ChatScreen> {
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Stack(
-                  children: [
-                    Align(
-                        alignment: Alignment.topCenter,
-                        child: Image.asset(
-                          'assets/images/quickFitColored.png',
-                          height: 200,
-                          width: 200,
-                        )),
-                    Image.asset('assets/components/darkLine.png', height: 240),
-                    Image.asset('assets/components/dimLine.png', height: 250),
-                    Positioned(
-                      top: 40,
-                      left: 25,
-                      child: IconButton(
-                        color: Color(0xFFC11010),
-                        onPressed: () {
-                          Scaffold.of(context).openDrawer();
-                        },
-                        icon: Icon(
-                          Icons.menu,
-                          size: 30,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
                 // TODO Chat HERE
                 Container(
                   padding: const EdgeInsets.all(10),
@@ -149,98 +150,98 @@ class _ChatScreenState extends State<ChatScreen> {
                 ),
                 chatList.isNotEmpty
                     ? Expanded(
-                        child: ListView.builder(
-                          controller: _scrollController,
-                          shrinkWrap: true,
-                          padding: const EdgeInsets.all(5),
-                          itemCount: chatList.length,
-                          physics: AlwaysScrollableScrollPhysics(),
-                          itemBuilder: (BuildContext context, int index) {
-                            if (chatList[index].admin == false) {
-                              return Column(
-                                children: <Widget>[
-                                  Container(
-                                    alignment: Alignment.topRight,
-                                    child: Container(
-                                      constraints: BoxConstraints(
-                                        maxWidth:
-                                            MediaQuery.of(context).size.width *
-                                                0.80,
-                                      ),
-                                      padding: EdgeInsets.all(10),
-                                      margin:
-                                          EdgeInsets.symmetric(vertical: 10),
-                                      decoration: BoxDecoration(
-                                        color: Color(0xFFC11010),
-                                        borderRadius: BorderRadius.circular(15),
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: Colors.grey.withOpacity(0.5),
-                                            spreadRadius: 2,
-                                            blurRadius: 5,
-                                          ),
-                                        ],
-                                      ),
-                                      child: Text(
-                                        chatList[index].message,
-                                        style: TextStyle(
-                                          fontSize: 15,
-                                          color: Colors.white,
-                                        ),
-                                      ),
+                  child: ListView.builder(
+                    controller: _scrollController,
+                    shrinkWrap: true,
+                    padding: const EdgeInsets.all(5),
+                    itemCount: chatList.length,
+                    physics: AlwaysScrollableScrollPhysics(),
+                    itemBuilder: (BuildContext context, int index) {
+                      if (chatList[index].admin == false) {
+                        return Column(
+                          children: <Widget>[
+                            Container(
+                              alignment: Alignment.topRight,
+                              child: Container(
+                                constraints: BoxConstraints(
+                                  maxWidth:
+                                  MediaQuery.of(context).size.width *
+                                      0.80,
+                                ),
+                                padding: EdgeInsets.all(10),
+                                margin:
+                                EdgeInsets.symmetric(vertical: 10),
+                                decoration: BoxDecoration(
+                                  color: Color(0xFFC11010),
+                                  borderRadius: BorderRadius.circular(15),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.grey.withOpacity(0.5),
+                                      spreadRadius: 2,
+                                      blurRadius: 5,
                                     ),
+                                  ],
+                                ),
+                                child: Text(
+                                  chatList[index].message,
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    color: Colors.white,
                                   ),
-                                ],
-                              );
-                            } else {
-                              return Column(
-                                children: <Widget>[
-                                  Container(
-                                    alignment: Alignment.topLeft,
-                                    child: Container(
-                                      constraints: BoxConstraints(
-                                        maxWidth:
-                                            MediaQuery.of(context).size.width *
-                                                0.80,
-                                      ),
-                                      padding: EdgeInsets.all(10),
-                                      margin:
-                                          EdgeInsets.symmetric(vertical: 10),
-                                      decoration: BoxDecoration(
-                                        color: Colors.white,
-                                        borderRadius: BorderRadius.circular(15),
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: Colors.grey.withOpacity(0.5),
-                                            spreadRadius: 2,
-                                            blurRadius: 5,
-                                          ),
-                                        ],
-                                      ),
-                                      child: Text(
-                                        chatList[index].message,
-                                        style: TextStyle(
-                                          fontSize: 15,
-                                          color: Colors.black54,
-                                        ),
-                                      ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        );
+                      } else {
+                        return Column(
+                          children: <Widget>[
+                            Container(
+                              alignment: Alignment.topLeft,
+                              child: Container(
+                                constraints: BoxConstraints(
+                                  maxWidth:
+                                  MediaQuery.of(context).size.width *
+                                      0.80,
+                                ),
+                                padding: EdgeInsets.all(10),
+                                margin:
+                                EdgeInsets.symmetric(vertical: 10),
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(15),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.grey.withOpacity(0.5),
+                                      spreadRadius: 2,
+                                      blurRadius: 5,
                                     ),
+                                  ],
+                                ),
+                                child: Text(
+                                  chatList[index].message,
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    color: Colors.black54,
                                   ),
-                                ],
-                              );
-                            }
-                          },
-                        ),
-                      )
+                                ),
+                              ),
+                            ),
+                          ],
+                        );
+                      }
+                    },
+                  ),
+                )
                     : Center(
-                        child: Text(
-                          'Start Conversation Now!',
-                          style: TextStyle(
-                              color: Color(0xFFC11010),
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ),
+                  child: Text(
+                    'Start Conversation Now!',
+                    style: TextStyle(
+                        color: Color(0xFFC11010),
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
                 _sendMessageArea(),
               ],
             ),

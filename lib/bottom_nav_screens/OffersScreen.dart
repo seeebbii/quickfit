@@ -50,11 +50,12 @@ class _OffersScreenState extends State<OffersScreen> {
                         alignment: Alignment.topCenter,
                         child: Image.asset(
                           'assets/images/quickFitColored.png',
-                          height: 200,
+                          height: 150,
                           width: 200,
                         )),
-                    Image.asset('assets/components/darkLine.png', height: 240),
-                    Image.asset('assets/components/dimLine.png', height: 250),
+                    Image.asset('assets/components/darkLine.png',
+                        height: 230),
+                    Image.asset('assets/components/dimLine.png', height: 240),
                     Positioned(
                       top: 40,
                       left: 25,

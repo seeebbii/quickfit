@@ -44,7 +44,7 @@ class DrawerItems extends StatelessWidget {
                     child: Image.network('http://sania.co.uk/quick_fix/${user.image_url}')),
           ),
           SizedBox(
-            height: 8,
+            height: 2,
           ),
           new ListTile(
             onTap: (){
@@ -54,10 +54,10 @@ class DrawerItems extends StatelessWidget {
             title: Text(
               'Portfolio',
             ),
-            leading: Image.asset('assets/logo/insta.png', height: 25,),
+            leading: Image.asset('assets/logo/insta.png', height: 20,),
           ),
           SizedBox(
-            height: 8,
+            height: 2,
           ),
           new ListTile(
             onTap: (){
@@ -69,10 +69,10 @@ class DrawerItems extends StatelessWidget {
             title: Text(
               'About Us',
             ),
-            leading: Icon(Icons.supervised_user_circle),
+            leading: Icon(Icons.supervised_user_circle, size: 20),
           ),
           SizedBox(
-            height: 8,
+            height: 2,
           ),
           new ListTile(
             onTap: (){
@@ -84,10 +84,10 @@ class DrawerItems extends StatelessWidget {
             title: Text(
               'Auto Body Shop',
             ),
-            leading: Icon(Icons.local_car_wash),
+            leading: Icon(Icons.local_car_wash, size: 20),
           ),
           SizedBox(
-            height: 8,
+            height: 2,
           ),
           new ListTile(
             onTap: (){
@@ -99,19 +99,19 @@ class DrawerItems extends StatelessWidget {
             title: Text(
               'Join Us',
             ),
-            leading: Icon(Icons.person_add),
+            leading: Icon(Icons.person_add, size: 20,),
           ),
           SizedBox(
-            height: 8,
+            height: 2,
           ),
           new ListTile(
             title: Text(
               'Contact Us',
             ),
-            leading: Icon(Icons.call),
+            leading: Icon(Icons.call, size: 20),
           ),
           SizedBox(
-            height: 10,
+            height: 5,
           ),
           Divider(
             height: 15,
@@ -126,6 +126,7 @@ class DrawerItems extends StatelessWidget {
             },
             leading: Icon(
               Icons.exit_to_app,
+              size: 20,
               color: Color(0xFFC11010),
             ),
             title: Text(

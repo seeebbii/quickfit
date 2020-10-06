@@ -56,18 +56,18 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           alignment: Alignment.topCenter,
                           child: Image.asset(
                             'assets/images/quickFitColored.png',
-                            height: 200,
+                            height: 150,
                             width: 200,
                           )),
                       Image.asset('assets/components/darkLine.png',
-                          height: 240),
-                      Image.asset('assets/components/dimLine.png', height: 250),
+                          height: 230),
+                      Image.asset('assets/components/dimLine.png', height: 240),
                       GestureDetector(
                         onTap: () {
                           getImage();
                         },
                         child: Container(
-                          margin: const EdgeInsets.only(top: 150),
+                          margin: const EdgeInsets.only(top: 140),
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: widget.user.image_url == 'image name'
@@ -143,16 +143,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   _buildNameWidget(),
                   _buildPhoneWidget(),
                   SizedBox(
-                    height: 18,
+                    height: 5,
                   ),
                   ListTile(
                     title: RaisedButton(
-                      padding: const EdgeInsets.all(10),
+                      padding: const EdgeInsets.all(5),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(25)),
                       child: Text(
                         'Update',
-                        style: TextStyle(color: Colors.white, fontSize: 18),
+                        style: TextStyle(color: Colors.white, fontSize: 15),
                       ),
                       onPressed: (){
                         updateMyProfile();
@@ -323,7 +323,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   Widget _buildEmailWidget() {
     return Container(
-      margin: const EdgeInsets.all(10),
+      margin: const EdgeInsets.all(5),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -341,7 +341,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             height: 2,
           ),
           Container(
-            height: 60.0,
+            height: 50.0,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10.0),
               border: Border.all(color: Colors.black, width: 1),
@@ -371,7 +371,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   Widget _buildNameWidget() {
     return Container(
-      margin: const EdgeInsets.only(top: 2, left: 10, right: 10, bottom: 5),
+      margin: const EdgeInsets.only(top: 2, left: 5, right: 5, bottom: 2),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -389,7 +389,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             height: 2,
           ),
           Container(
-            height: 60.0,
+            height: 50.0,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10.0),
               border: Border.all(color: Colors.black, width: 1),
@@ -418,7 +418,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   Widget _buildPhoneWidget() {
     return Container(
-      margin: const EdgeInsets.only(top: 2, left: 10, right: 10),
+      margin: const EdgeInsets.only(top: 1, left: 5, right: 5),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -436,7 +436,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             height: 2,
           ),
           Container(
-            height: 60.0,
+            height: 50.0,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10.0),
               border: Border.all(color: Colors.black, width: 1),

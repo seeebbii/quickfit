@@ -57,12 +57,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         alignment: Alignment.topCenter,
                         child: Image.asset(
                           'assets/images/quickFitColored.png',
-                          height: 200,
+                          height: 150,
                           width: 200,
                         )),
                     Image.asset('assets/components/darkLine.png',
-                        height: 240),
-                    Image.asset('assets/components/dimLine.png', height: 250),
+                        height: 230),
+                    Image.asset('assets/components/dimLine.png', height: 240),
                     Positioned(
                       top: 40,
                       left: 25,
@@ -81,18 +81,18 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 // TODO HOME HERE
                 Container(
-                  margin: const EdgeInsets.only(top: 5),
+                  margin: const EdgeInsets.only(top: 1),
                   child: Text(
                     'Choose your Brand',
                     style: TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.w700,
-                        fontSize: 18
+                        fontSize: 15
                     ),
                   ),
                 ),
                 Container(
-                  padding: const EdgeInsets.all(20),
+                  padding: const EdgeInsets.all(15),
                   child: Material(
                     elevation: 5.0,
                     borderRadius: BorderRadius.circular(25.0),

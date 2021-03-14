@@ -43,7 +43,7 @@ class DrawerItems extends StatelessWidget {
                     )
                   : ClipRRect(
                       borderRadius: BorderRadius.circular(25),
-                      child: Image.network('http://sania.co.uk/quick_fix/${user.image_url}')),
+                      child: Image.network('http://sania.co.uk/backupapp/quick_fix/${user.image_url}')),
             ),
             SizedBox(
               height: 2,

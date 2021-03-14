@@ -34,7 +34,7 @@ class _LoginScreenState extends State<LoginScreen> {
     String email, pass;
     email = emailController.text.trim();
     pass = passwordController.text.trim();
-    String URL = 'http://sania.co.uk/quick_fix/iosClientLogin.php';
+    String URL = 'http://sania.co.uk/backupapp/quick_fix/iosClientLogin.php';
     // CREATING JSON OBJECT TO POST OVER LINK
     String jsonObj = jsonEncode(<String, dynamic>{
       'user_email' : email,

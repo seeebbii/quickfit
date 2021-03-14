@@ -254,7 +254,7 @@ class _ChatScreenState extends State<ChatScreen> {
   getChat() async {
     chatList.clear();
     String URL =
-        'http://sania.co.uk/quick_fix/chat/MyData.php?id=${widget.user.id}';
+        'http://sania.co.uk/backupapp/quick_fix/chat/MyData.php?id=${widget.user.id}';
     http.Response response = await http.get(URL);
     List test = json.decode(response.body);
     for (var i = 0; i < test.length; i++) {
@@ -269,7 +269,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
     // UPLOADING MESSAGE USING POST METHOD
 
-    String URL = 'http://sania.co.uk/quick_fix/chat/Send.php';
+    String URL = 'http://sania.co.uk/backupapp/quick_fix/chat/Send.php';
     final jsonObj = {
       'msg' : string,
       'id' : widget.user.id

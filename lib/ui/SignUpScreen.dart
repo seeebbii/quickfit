@@ -39,7 +39,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         pass = passwordController.text.trim();
         phone = phoneController.text.toString().trim();
         name = nameController.text.trim();
-        String URL = 'http://sania.co.uk/quick_fix/iosClientSignUp.php?name=$name&email=$email&phone=$phone&password=$pass';
+        String URL = 'http://sania.co.uk/backupapp/quick_fix/iosClientSignUp.php?name=$name&email=$email&phone=$phone&password=$pass';
         // MAKING AN API REQUEST
         http.Response response = await http.get(URL);
         Navigator.of(context).pop();

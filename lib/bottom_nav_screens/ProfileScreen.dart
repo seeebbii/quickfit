@@ -110,7 +110,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                               Color(0xFFC11010),
                                               maxRadius: 80,
                                               backgroundImage: NetworkImage(
-                                                'http://sania.co.uk/quick_fix/${widget.user.image_url}',
+                                                'http://sania.co.uk/backupapp/quick_fix/${widget.user.image_url}',
                                               ))
                                           : Image.file(
                                               imageSelected,
@@ -179,7 +179,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   }
 
   updateMyProfile() async {
-    String URL = 'http://sania.co.uk/quick_fix/updateProfile.php';
+    String URL = 'http://sania.co.uk/backupapp/quick_fix/updateProfile.php';
     if(imageSelected != null){
       base64Image = base64Encode(imageSelected.readAsBytesSync());
     }else{

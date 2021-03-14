@@ -253,7 +253,7 @@ class _ServicesScreenState extends State<ServicesScreen> {
                                         children: [
                                           CachedNetworkImage(
                                             imageUrl:
-                                                'http://sania.co.uk/quick_fix/services/${filteredServicesList[index].image_url}',
+                                                'http://sania.co.uk/backupapp/quick_fix/services/${filteredServicesList[index].image_url}',
                                             height: 100,
                                             width: 100,
                                             placeholder: (context, url) =>
@@ -300,7 +300,7 @@ class _ServicesScreenState extends State<ServicesScreen> {
   Future<List> readServices() async {
     filteredServicesList.clear();
     servicesList.clear();
-    String URL = 'http://sania.co.uk/quick_fix/services_api.php';
+    String URL = 'http://sania.co.uk/backupapp/quick_fix/services_api.php';
     http.Response response = await http.get(URL);
     List test = json.decode(response.body);
     for (var i = 0; i < test.length; i++) {
@@ -313,7 +313,7 @@ class _ServicesScreenState extends State<ServicesScreen> {
   }
 
   void sendMyRequest(BrandModel brand, ServiceModel service) async {
-    String URL = 'http://sania.co.uk/quick_fix/sendPushNotification.php';
+    String URL = 'http://sania.co.uk/backupapp/quick_fix/sendPushNotification.php';
     final jsonObj = {
       'user_id': widget.user.id,
       'qf_name': widget.user.name,

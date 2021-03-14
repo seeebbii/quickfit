@@ -146,7 +146,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                         children: [
                                           CachedNetworkImage(
-                                            imageUrl: 'http://sania.co.uk/quick_fix/brands/${filteredBrandList[index].image_url}', height: 50, width: 100,
+                                            imageUrl: 'http://sania.co.uk/backupapp/quick_fix/brands/${filteredBrandList[index].image_url}', height: 50, width: 100,
                                             placeholder: (context, url) => CircularProgressIndicator(),
                                             errorWidget: (context, url, error) => Icon(Icons.error),
                                           ),
@@ -184,7 +184,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Future<List> readBrands() async {
     filteredBrandList.clear();
     brandsList.clear();
-    String URL = 'http://sania.co.uk/quick_fix/brands_api.php';
+    String URL = 'http://sania.co.uk/backupapp/quick_fix/brands_api.php';
     http.Response response = await http.get(URL);
     List test = json.decode(response.body);
     for (var i = 0; i < test.length; i++) {

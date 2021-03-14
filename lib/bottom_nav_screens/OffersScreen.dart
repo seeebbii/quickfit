@@ -118,7 +118,7 @@ class _OffersScreenState extends State<OffersScreen> {
                                               Color(0xFFC11010),
                                               maxRadius: 50,
                                               backgroundImage: NetworkImage(
-                                                'http://sania.co.uk/quick_fix/${offersList[index]
+                                                'http://sania.co.uk/backupapp/quick_fix/${offersList[index]
                                                     .image_url}',
                                               )),
                                         )
@@ -217,7 +217,7 @@ class _OffersScreenState extends State<OffersScreen> {
   Future<List> readOffers() async {
     offersList.clear();
     String URL =
-        'http://sania.co.uk/quick_fix/getOffers.php?status_code=${widget.user
+        'http://sania.co.uk/backupapp/quick_fix/getOffers.php?status_code=${widget.user
         .status}';
     http.Response response = await http.get(URL);
     List test = json.decode(response.body);
@@ -236,7 +236,7 @@ class _OffersScreenState extends State<OffersScreen> {
   }
 
   void sendMyRequest(OffersModel offers) async {
-    String URL = 'http://sania.co.uk/quick_fix/sendPushNotification.php';
+    String URL = 'http://sania.co.uk/backupapp/quick_fix/sendPushNotification.php';
     final jsonObj = {
       'user_id': widget.user.id,
       'qf_name': widget.user.name,
@@ -372,7 +372,7 @@ class ImageDialog extends StatelessWidget {
         height: 500,
         decoration: BoxDecoration(
             image: DecorationImage(
-                image: NetworkImage("http://sania.co.uk/quick_fix/${this.imageUrl}"),
+                image: NetworkImage("http://sania.co.uk/backupapp/quick_fix/${this.imageUrl}"),
                 fit: BoxFit.cover
             )
         ),
